@@ -1,0 +1,76 @@
+$accent-color: #05C2DF;
+
+$icon-scroll: "https://i.gstatvb.com/09e861d66681214d143303a310945bc31689619372.rng.svg";
+$icon-phone: "https://i.gstatvb.com/970711392062c471092f39eb7b28917d1689622697.rng.png";
+$icon-email: "https://i.gstatvb.com/47aef19509ccd44f2f7fd4b8678b8fa71689620240.rng.svg";
+
+%top-title {
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+%h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+%h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+%button-text {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+%body-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #929292;
+}
+
+@mixin button($width: 120px, $height: 40px) {
+  @extend %button-text;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: $height;
+  min-width: $width;
+  padding: 10px;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin flex-position($flex-direction: row) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bgr-img() {
+  background: center/contain no-repeat;
+}

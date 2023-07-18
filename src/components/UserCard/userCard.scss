@@ -1,0 +1,96 @@
+@import '../../styles/common';
+
+.user-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  border: 1px solid $accent-color;
+  border-radius: 10px;
+  height: min-content;
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0;
+
+  &__main-info,
+  &__info,
+  &__contacts {
+    @include flex-position($flex-direction: column);
+  }
+
+  &__contacts {
+    margin-right: 0;
+  }
+
+  &__name {
+    @extend %h2;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  &__photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+
+  &__detail,
+  &__age,
+  &__contacts-title {
+    @extend %body-text;
+  }
+
+  &__contacts-title {
+    margin-bottom: 8px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__phone,
+  &__email {
+    position: relative;
+    @extend %body-text;
+    color: #fff;
+    margin-left: 30px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -30px;
+      width: 20px;
+      height: 20px;
+      @include bgr-img;
+    }
+  }
+
+  &__phone::after {
+    background-image: url($icon-phone);
+  }
+
+  &__email::after {
+    background-image: url($icon-email);
+  }
+}
+
+@media (max-width: 540px) {
+  .user-card {
+    display: flex;
+    flex-direction: column;
+
+    &__main-info,
+    &__info {
+      margin-bottom: 20px;
+    }
+
+    &__actions {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+}
